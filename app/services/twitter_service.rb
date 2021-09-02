@@ -8,10 +8,16 @@ class TwitterService
         'Authorization': 'Bearer AAAAAAAAAAAAAAAAAAAAAMwHTQEAAAAA0VLKmz5mDc67O2Z6gUB60R1rCV0%3DTnandpKNhqbk2SZ9F2SkSrQkGslVa997fq33RydGGoLzBxUMqC'
       }
     )
-    data = {
-      media_url: html['extended_entities']['media'][0]['media_url_https'],
-      video_url: html['extended_entities']['media'][0]['video_info']['variants'][-1]['url']
-    }
-    return data
+
+    begin
+      data = {
+        media_url: html['extended_entities']['media'][0]['media_url_https'],
+        video_url: html['extended_entities']['media'][0]['video_info']['variants'][-1]['url']
+      }
+      return data  
+    rescue => exception
+      return false
+    end
+    
   end
 end
