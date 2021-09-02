@@ -163,7 +163,6 @@ DEPENDENCIES
   byebug
   httparty
   listen (~> 3.2)
-  nokogiri
   pg (>= 0.18, < 2.0)
   pry-byebug
   puma (~> 4.1)
