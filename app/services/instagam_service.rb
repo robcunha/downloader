@@ -1,0 +1,2 @@
+class InstagramService
+end
