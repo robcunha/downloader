@@ -2,7 +2,11 @@ class Api::DownloaderController < ApplicationController
   def index
     link = params[:url]
     
-    data = ::TwitterService.get_video(link)
+    begin
+      data = ::TwitterService.get_video(link)
+    rescue
+      puts "deu ruim"
+    end
 
     if data == false
       render json: {
